@@ -1,0 +1,62 @@
+.side__bar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #FFF;
+    width: 260px;
+    box-shadow: 0 0 15px 0 rgba(34,41,47,.05);
+    overflow-y: auto;
+}
+.side__brand
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem;
+}
+.side__brand li:first-child a
+{
+    display: flex;
+    align-items: center;
+}
+.side__brand__logo
+{
+    width: 40px;
+    height: 40px;
+    margin-right: 1.4rem;
+}
+.side__brand__text
+{
+    font-weight: 600;
+    letter-spacing: .04rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: #7367f0;
+}
+.side__brand li:last-child a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: .2rem solid #5e50ee;
+}
+.side__brand li:last-child a::before
+{
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 0.19rem solid #5e50ee;
+}
+.side__bar__navigation
+{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 400;
+}

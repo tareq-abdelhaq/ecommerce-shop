@@ -1,0 +1,125 @@
+.nav__bar
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 260px;
+    margin: 1.8rem 2.8rem 0;
+    border-radius: 0.6rem;
+    background-color: #FFF;
+    box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3rem 1.6rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    z-index: 100;
+}
+
+.nav__bookmarks
+{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.nav__bookmarks .nav__bookmark
+{
+    margin-right: 1.2rem;
+}
+.nav__admin
+{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.nav__admin li
+{
+    margin-right: 1.2rem;
+}
+.nav__admin__lang a span
+{
+    color: #6e6b7b;
+    margin-left: .5rem;
+
+
+}
+.nav__admin__lang img
+{
+    width: 25px;
+    height: 15px;
+    vertical-align: middle;
+}
+.nav__admin__cart
+{
+    position: relative;
+}
+.nav__admin__cart__count
+{
+    position: absolute;
+    top: -11px;
+    right: -6px;
+    font-weight: 600;
+    color: #FFF;
+    font-size: 1.2rem;
+}
+.nav__admin__notifications
+{
+    position: relative;
+}
+.nav__notifications
+{
+    position: absolute;
+    top: -11px;
+    right: -6px;
+    font-weight: 600;
+    color: #FFF;
+    font-size: 1.2rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav__notifications.red
+{
+    background-color: #ea5455;
+}
+
+.nav__notifications.blue
+{
+    background-color: #7367f0;
+}
+.nav__admin__info
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav__admin__text
+{
+    display: flex;
+    flex-direction: column;
+    color: #6e6b7b;
+    align-items: end;
+}
+.nav__admin__text p:first-child
+{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.nav__admin__text p:last-child
+{
+    font-weight: 400;
+    font-size: smaller;
+}
+.nav__admin__img
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: url("https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/demo-1/img/13-small.d796bffd.png");
+    background-size: cover;
+}
+

@@ -1,0 +1,13 @@
+.side__bar__header
+{
+    margin: 3.2rem 0 1.1rem 3rem;
+}
+.side__bar__header span
+{
+    text-transform: uppercase;
+    color: #a6a4b0;
+    letter-spacing: 0.01rem;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
