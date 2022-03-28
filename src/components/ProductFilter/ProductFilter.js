@@ -29,9 +29,15 @@ function getUniqueBrands(products)
 class ProductFilter extends React.Component
 {
 
+    filterPriceHandler = (event) =>
+    {
+        this.setState({priceRange: event.target.value})
+    }
+
     render() {
-       const categoryList = getUniqueCategories(this.props.products)
+        const categoryList = getUniqueCategories(this.props.products)
         const brandsList = getUniqueBrands(this.props.products)
+
         return(
             <aside>
                 <h6 className={styles["product__filters__title"]}> filters </h6>
@@ -39,29 +45,41 @@ class ProductFilter extends React.Component
                     <FilterTitle first>multi range</FilterTitle>
                     <ul className={styles["filter__section"]}>
                         <li>
-                            <input type="radio" id="all__prices" name="price"/>
+                            <input type="radio" id="all__prices" value= "all" name="price"
+                                   checked={this.props.priceRange === "all"}
+                                   onChange={this.props.changePriceRange}
+                            />
                             <label htmlFor="all__prices">All</label>
                         </li>
                         <li>
-                            <input type="radio" id="less__ten" name="price"/>
+                            <input type="radio" id="less__ten" value="less than 10" name="price"
+                                   checked={this.props.priceRange === "less than 10"}
+                                   onChange={this.props.changePriceRange}
+                            />
                             <label htmlFor="less__ten">&lt;= $10</label>
 
                         </li>
                         <li>
-
-                        </li>
-                        <li>
-                            <input type="radio" id="ten__hundred" name="price"/>
+                            <input type="radio" id="ten__hundred" value="between 10 and 100" name="price"
+                                   checked={this.props.priceRange === "between 10 and 100"}
+                                   onChange={this.props.changePriceRange}
+                            />
                             <label htmlFor="ten__hundred">$10 - $100</label>
 
                         </li>
                         <li>
-                            <input type="radio" id="hundred__five" name="price"/>
+                            <input type="radio" id="hundred__five" value= "between 100 and 500" name="price"
+                                   checked={this.props.priceRange === "between 100 and 500"}
+                                   onChange={this.props.changePriceRange}
+                            />
                             <label htmlFor="hundred__five">$100 - $500</label>
 
                         </li>
                         <li>
-                            <input type="radio" id="greater__five" name="price"/>
+                            <input type="radio" id="greater__five" value="greater than 500" name="price"
+                                   checked={this.props.priceRange === "greater than 500"}
+                                   onChange={this.props.changePriceRange}
+                            />
                             <label htmlFor="greater__five">&gt;= $500</label>
                         </li>
                     </ul>

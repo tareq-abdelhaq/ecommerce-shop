@@ -24,12 +24,12 @@ class ProductCard extends React.Component
                     </a>
                 </div>
                 <div className={styles["product__card__body"]}>
-                    <p>
-                        <div className={styles["product__stars"]}>
+                    <div>
+                        <span className={styles["product__stars"]}>
                             {ratingStars}
-                        </div>
+                        </span>
                         <span className={styles["product__price"]}>${this.props.price}</span>
-                    </p>
+                    </div>
                     <h6 className={styles["product__title"]}>
                         <a href="#">{this.props.name}</a>
                     </h6>

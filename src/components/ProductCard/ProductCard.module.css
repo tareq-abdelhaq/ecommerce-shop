@@ -25,7 +25,7 @@
     width: 100%;
     padding: 1.4rem;
 }
-.product__card__body p:first-child
+.product__card__body div:first-child
 {
     display: flex;
     justify-content: space-between;
