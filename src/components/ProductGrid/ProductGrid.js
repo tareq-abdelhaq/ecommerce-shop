@@ -28,7 +28,7 @@ class ProductGrid extends React.Component
 
     render() {
         const productList = this.props.products.map(product => {
-            return <ProductCard key={product.id} {...product}/>
+            return <ProductCard key={product.id} {...product} display={this.props.displayProducts === "grid" ? "grid" : "list"}/>
         })
 
         return(

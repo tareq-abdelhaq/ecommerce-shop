@@ -17,27 +17,29 @@ class ProductCard extends React.Component
         }
 
         return(
-            <article className={styles["product__card"]}>
+            <article className={this.props.display === "grid" ? `${styles["product__card"]} ${styles["grid"]}` :
+                `${styles["product__card"]} ${styles["list"]}`}>
                 <div>
                     <a href="#">
                         <img src={this.props.img} alt={this.props.name} />
                     </a>
                 </div>
                 <div className={styles["product__card__body"]}>
-                    <div>
+                    <div className={styles["product__rating"]}>
                         <span className={styles["product__stars"]}>
                             {ratingStars}
                         </span>
-                        <span className={styles["product__price"]}>${this.props.price}</span>
+                        {this.props.display === "grid" &&<span className={styles["product__price"]}>${this.props.price}</span>}
                     </div>
                     <h6 className={styles["product__title"]}>
-                        <a href="#">{this.props.name}</a>
+                        <a href="#">{this.props.name} By <span className={styles["product__title__brand"]}>{this.props.brand}</span> </a>
                     </h6>
                     <p className={styles["product__description"]}>
                         {this.props.discription}
                     </p>
                 </div>
                 <div className={styles["product__buttons"]}>
+                    {this.props.display === "list" &&<span>${this.props.price}</span>}
                     <button className={`${styles["wishlist"]} ${styles["product__btn"]}`}>
                         <FavoriteBorderOutlinedIcon />
                         <span>wishlist</span>

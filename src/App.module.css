@@ -66,6 +66,11 @@
     display: flex;
     gap: 4rem;
 }
+.products__sections__wrapper
+{
+    width: 100%;
+    flex-grow: 1;
+}
 .buy__btn
 {
     position: fixed;

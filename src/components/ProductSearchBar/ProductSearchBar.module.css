@@ -1,8 +1,4 @@
-.products__wrapper
-{
-    width: 100%;
-    flex-grow: 1;
-}
+
 .products__wrapper.grid__active .grid__btn
 {
     background-color: rgba(115,103,240,.2);
@@ -87,6 +83,10 @@
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
+}
+.products__control__view input
+{
+    display: none;
 }
 .view__btn
 {

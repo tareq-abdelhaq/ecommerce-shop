@@ -5,9 +5,8 @@
     grid-template-columns: repeat(3,1fr);
     gap: 2rem;
 }
-.pagination
+.products__grid .pagination
 {
     grid-column: 1/-1;
     justify-self: center;
 }
-

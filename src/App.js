@@ -15,7 +15,10 @@ class App extends React.Component
 {
   state = {
       searchText: "",
-      priceRange: "all"
+      priceRange: "allPrices",
+      category: "allCategories",
+      brand: "allBrands",
+      displayProducts: "grid"
   }
 
   searchTextHandler = (e)=>{
@@ -24,14 +27,24 @@ class App extends React.Component
   priceChangeHandler = (e) =>{
       this.setState({priceRange: e.target.value})
   }
-
+  changeCategoryHandler = (e) =>{
+      this.setState({category: e.target.value})
+  }
+  changeBrandHandler = (e) =>{
+      this.setState({brand: e.target.value})
+  }
+  changeProductsDisplayHandler = (e) => {
+      this.setState({displayProducts: e.target.value === "grid" ? "grid" : "list"})
+  }
   render() {
-      let FilteredProducts = products.filter(product =>  {
+      // search filter
+      let filteredProducts = products.filter(product =>  {
               return product.name.includes(this.state.searchText)
           }
       )
-      if (this.state.priceRange !== "all"){
-          FilteredProducts = FilteredProducts.filter(product => {
+      // price filter
+      if (this.state.priceRange !== "allPrices"){
+          filteredProducts = filteredProducts.filter(product => {
               if (this.state.priceRange === "less than 10"){
                   return product.price <= 10
               }else if(this.state.priceRange === "between 10 and 100"){
@@ -42,6 +55,14 @@ class App extends React.Component
                   return product.price > 500
               }
           })
+      }
+      // category filter
+      if (this.state.category !== "allCategories"){
+          filteredProducts = filteredProducts.filter(product => product.category === this.state.category)
+      }
+      // brand filter
+      if (this.state.brand !== "allBrands"){
+          filteredProducts = filteredProducts.filter(product => product.brand === this.state.brand)
       }
 
     return(
@@ -85,10 +106,18 @@ class App extends React.Component
                 <section className={styles["products__section"]}>
                     <ProductFilter products={products} priceRange={this.state.priceRange}
                                    changePriceRange={this.priceChangeHandler}
+                                   category={this.state.category}
+                                   changeCategory={this.changeCategoryHandler}
+                                   brand={this.state.brand}
+                                   changeBrand={this.changeBrandHandler}
                     />
-                    <section>
-                        <ProductSearchBar searchText={this.state.searchText} changeSearchText={this.searchTextHandler}/>
-                        <ProductGrid products={FilteredProducts} />
+                    <section className={styles["products__sections__wrapper"]}>
+                        <ProductSearchBar searchText={this.state.searchText}
+                                          changeSearchText={this.searchTextHandler}
+                                          displayProducts={this.state.displayProducts}
+                                          changeProductsDisplay={this.changeProductsDisplayHandler}
+                        />
+                        <ProductGrid products={filteredProducts} displayProducts={this.state.displayProducts}/>
                     </section>
                 </section>
             </main>

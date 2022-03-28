@@ -15,7 +15,7 @@ class ProductSearchBar extends React.Component
     render() {
         return (
             <section className=
-                         {this.state.gridView ? `${styles["products__wrapper"]} ${styles["grid__active"]}`
+                         {this.props.displayProducts === "grid" ? `${styles["products__wrapper"]} ${styles["grid__active"]}`
                 : `${styles["products__wrapper"]} ${styles["list__active"]}`}>
                 <section className={styles["products__control__bar"]}>
                     <span>27 results found</span>
@@ -32,12 +32,21 @@ class ProductSearchBar extends React.Component
                             </ul>
                         </div>
                         <div className={styles["products__control__view"]}>
-                            <button className={`${styles["view__btn"]} ${styles["grid__btn"]}`} onClick={this.turnGridHandler}>
+                            <label htmlFor="grid" className={`${styles["view__btn"]} ${styles["grid__btn"]}`}
+                                   onClick={this.props.changeProductsDisplay}>
+                                <input type="radio" id="grid" value="grid" name="productsDisplay"
+                                       checked={this.props.displayProducts === "grid"}
+                                       onChange={this.props.changeProductsDisplay}
+                                />
                                 <GridViewOutlinedIcon style={{color: "#7367f0", fontSize: "2rem"}}/>
-                            </button>
-                            <button className={`${styles["view__btn"]} ${styles["list__btn"]}`} onClick={this.turnListHandler}>
+                            </label>
+                            <label id="radio" className={`${styles["view__btn"]} ${styles["list__btn"]}`}>
+                                <input type="radio" id="grid" value="list" name="productsDisplay"
+                                       checked={this.props.displayProducts === "list"}
+                                       onChange={this.props.changeProductsDisplay}
+                                />
                                 <ListOutlinedIcon style={{color: "#7367f0", fontSize: "2rem"}}/>
-                            </button>
+                            </label>
                         </div>
                     </div>
 

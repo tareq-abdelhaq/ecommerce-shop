@@ -2,41 +2,45 @@ import React from "react"
 import styles from "./ProductFilter.module.css"
 import FilterTitle from "../FilterTitle/FilterTitle";
 
-function getUniqueCategories(products)
-{
-    const allCategories = products.map(product => product.category)
-    const categories = [...(new Set(allCategories))]
-    return  categories.map(category => {
-        return  <li key={category}>
-            <input type="radio" id={category} name="category"/>
-            <label htmlFor={category}>{category}</label>
-        </li>
-    })
-}
 
-function getUniqueBrands(products)
-{
-    const allBrands = products.map(product => product.brand)
-    const brands = [...(new Set(allBrands))]
-    return  brands.map(brand => {
-        return  <li key={brand}>
-            <input type="radio" id={brand} name="brand"/>
-            <label htmlFor={brand}>{brand}</label>
-        </li>
-    })
-}
+
 
 class ProductFilter extends React.Component
 {
-
-    filterPriceHandler = (event) =>
-    {
-        this.setState({priceRange: event.target.value})
+     getUniqueCategories = () => {
+        const allCategories = this.props.products.map(product => product.category)
+        const categories = [...(new Set(allCategories))]
+        categories.unshift("allCategories");
+        return  categories.map((category,index) => {
+            return  <li key={category}>
+                        <input type="radio" id={category} name="category" value={category}
+                               checked={this.props.category === category}
+                               onChange={this.props.changeCategory}
+                        />
+                        <label htmlFor={category}>{index === 0 ? "All" : category}</label>
+                    </li>
+        })
     }
 
+    getUniqueBrands = () =>{
+        const allBrands = this.props.products.map(product => product.brand)
+        const brands = [...(new Set(allBrands))]
+        brands.unshift("allBrands")
+        return  brands.map((brand,index) => {
+            return  <li key={brand}>
+                        <input type="radio" id={brand} name="brand" value={brand}
+                               checked={this.props.brand === brand}
+                               onChange={this.props.changeBrand}
+                        />
+                        <label htmlFor={brand}>{index === 0 ? "All" : brand}</label>
+                    </li>
+        })
+    }
+
+
     render() {
-        const categoryList = getUniqueCategories(this.props.products)
-        const brandsList = getUniqueBrands(this.props.products)
+        const categoryList = this.getUniqueCategories()
+        const brandsList = this.getUniqueBrands()
 
         return(
             <aside>
@@ -45,8 +49,8 @@ class ProductFilter extends React.Component
                     <FilterTitle first>multi range</FilterTitle>
                     <ul className={styles["filter__section"]}>
                         <li>
-                            <input type="radio" id="all__prices" value= "all" name="price"
-                                   checked={this.props.priceRange === "all"}
+                            <input type="radio" id="all__prices" value= "allPrices" name="price"
+                                   checked={this.props.priceRange === "allPrices"}
                                    onChange={this.props.changePriceRange}
                             />
                             <label htmlFor="all__prices">All</label>
