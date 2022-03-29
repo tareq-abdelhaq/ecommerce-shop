@@ -152,7 +152,7 @@
         left: 0
     }
 }
-@media (max-width: 667px) {
+@media (max-width: 575px) {
     .nav__bookmarks
     {
         display: none;
@@ -161,6 +161,10 @@
     {
         width: 100%;
         justify-content: space-evenly;
+    }
+    .nav__admin__text
+    {
+        display: none;
     }
 }
 
