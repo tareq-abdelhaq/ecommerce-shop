@@ -15,6 +15,7 @@
     font-weight: 400;
     font-size: 1.4rem;
     z-index: 100;
+    transition: all .4s cubic-bezier(.25,.8,.25,1),background 0s;
 }
 .nav__bar.dark
 {
@@ -141,5 +142,25 @@
     background-color: #28c76f;
     bottom: -1px;
     right: 0;
+}
+/*
+*** media queries ***
+*/
+@media (max-width: 1300px) {
+    .nav__bar
+    {
+        left: 0
+    }
+}
+@media (max-width: 667px) {
+    .nav__bookmarks
+    {
+        display: none;
+    }
+    .nav__admin
+    {
+        width: 100%;
+        justify-content: space-evenly;
+    }
 }
 

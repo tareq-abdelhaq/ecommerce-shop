@@ -1,3 +1,7 @@
+.aside__products__filter
+{
+    min-width: 250px;
+}
 .product__filters__title
 {
     margin-bottom: 4rem;
@@ -8,13 +12,14 @@
 }
 .product__filters__wrapper
 {
-    width: 250px;
+    width: 100%;
     padding: 2.1rem;
     box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
     background-color: #FFF;
     display: flex;
     flex-direction: column;
     border-radius: 0.6rem;
+    transition: all .4s cubic-bezier(.25,.8,.25,1),background 0s;
 }
 .product__filters__wrapper.dark
 {
@@ -56,4 +61,12 @@
 .slider__circle.right
 {
     right: -13px;
+}
+/*
+*** media queries
+*/
+@media (max-width: 992px) {
+    .aside__products__filter{
+        display: none;
+    }
 }

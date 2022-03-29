@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 2rem;
+    transition: all .4s cubic-bezier(.25,.8,.25,1),background 0s;
 }
 .products__grid .pagination
 {
@@ -58,4 +59,12 @@
 {
     background-color: #7367f0;
     color: #FFF;
+}
+/*
+*** media queries ***
+*/
+@media (max-width: 992px) {
+    .products__grid{
+        grid-template-columns: repeat(2,1fr);
+    }
 }

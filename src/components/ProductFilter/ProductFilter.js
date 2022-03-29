@@ -43,7 +43,7 @@ class ProductFilter extends React.Component
         const brandsList = this.getUniqueBrands()
 
         return(
-            <aside>
+            <aside className={styles["aside__products__filter"]}>
                 <h6 className={styles["product__filters__title"]} style={{color: this.props.dark && "#d0d2d6"}}> filters </h6>
                 <div className={this.props.dark ? `${styles["product__filters__wrapper"]} ${styles["dark"]}` : styles["product__filters__wrapper"]}>
                     <FilterTitle first dark={this.props.dark}>multi range</FilterTitle>

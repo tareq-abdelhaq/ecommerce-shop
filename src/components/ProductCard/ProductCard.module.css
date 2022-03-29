@@ -21,7 +21,7 @@
 }
 .product__card.grid
 {
-    width: 230px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +35,7 @@
 
 .product__card.list div:first-child
 {
-    width: 200px;
+    max-width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
