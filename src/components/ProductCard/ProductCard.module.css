@@ -5,6 +5,20 @@
     box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
     transition: transform 0.3s ease-in-out;
 }
+
+.product__card.grid.dark,.product__card.list.dark{
+    background-color: #283046;
+}
+.product__card.grid.dark .product__price,.product__card.list.dark .product__title a,.product__card.grid.dark .product__title a,
+.product__card.grid.dark,.product__card.list.dark .product__description
+{
+    color: #a6a4b0;
+}
+.product__card.grid.dark .wishlist
+{
+    background-color: #161d31;
+    color: #FFF;
+}
 .product__card.grid
 {
     width: 230px;
@@ -84,7 +98,6 @@
 .product__card .product__description
 {
     font-size: 1.2rem;
-    color: #5b4d99;
     margin-top: 0.2rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -101,7 +114,6 @@
     -webkit-box-orient: vertical;
     color: #6e6b7b;
     line-height: 2rem;
-
 }
 .product__card .product__title
 {
@@ -111,6 +123,11 @@
     font-weight: 600;
     color: #6e6b7b;
     font-size: 1.4rem;
+}
+.product__card .product__title small
+{
+    display: block;
+    margin: 0.5rem 0 1rem;
 }
 .product__card.grid
 {

@@ -18,7 +18,10 @@ class App extends React.Component
       priceRange: "allPrices",
       category: "allCategories",
       brand: "allBrands",
-      displayProducts: "grid"
+      displayProducts: "grid",
+      darkTheme: false,
+      sort: "feature",
+      currentPage: 1
   }
 
   searchTextHandler = (e)=>{
@@ -36,12 +39,25 @@ class App extends React.Component
   changeProductsDisplayHandler = (e) => {
       this.setState({displayProducts: e.target.value === "grid" ? "grid" : "list"})
   }
+  toggleTheme = () => {
+      this.setState({darkTheme: !this.state.darkTheme})
+  }
+  changeSortHandler = (e) => {
+      this.setState({sort: e.target.value})
+  }
+  changeCurrentPageHandler = (pageNumber) => {
+      this.setState({currentPage: pageNumber})
+  }
   render() {
+      let filteredProducts = [...products];
       // search filter
-      let filteredProducts = products.filter(product =>  {
-              return product.name.includes(this.state.searchText)
-          }
-      )
+      if (this.state.searchText !== ""){
+          filteredProducts = products.filter(product =>  {
+                  return product.name.toLowerCase().includes(this.state.searchText.toLowerCase())
+              }
+          )
+      }
+
       // price filter
       if (this.state.priceRange !== "allPrices"){
           filteredProducts = filteredProducts.filter(product => {
@@ -64,14 +80,30 @@ class App extends React.Component
       if (this.state.brand !== "allBrands"){
           filteredProducts = filteredProducts.filter(product => product.brand === this.state.brand)
       }
+      // sort
+      if (this.state.sort !== "feature"){
+          if (this.state.sort === "lowest"){
+              filteredProducts = filteredProducts.sort((product1,product2) => product1.price - product2.price)
+          }else{
+              filteredProducts = filteredProducts.sort((product1,product2) => product2.price - product1.price)
+          }
+      }
+      const resultsCount = filteredProducts.length;
+      // paginate
+      const productsPerPage = 9;
+      const indexOfLastProduct = this.state.currentPage * productsPerPage;
+      const indexOfFirstProduct =indexOfLastProduct - productsPerPage;
+      filteredProducts = filteredProducts.slice(indexOfFirstProduct,indexOfLastProduct)
 
     return(
-        <div>
-            <NavBar />
-            <SideBar />
+        <div className={this.state.darkTheme ? `${styles["body__wrapper"]} ${styles["dark"]}`
+            : `${styles["body__wrapper"]}`}
+        >
+            <NavBar darkTheme={this.state.darkTheme} changeTheme={this.toggleTheme}/>
+            <SideBar darkTheme={this.state.darkTheme}/>
             <main className={styles["container"]}>
                 <header className={styles["main__header"]}>
-                    <div className={styles["header__path"]}>
+                    <div className={this.state.darkTheme ? `${styles["header__path"]} ${styles["dark"]}` : `${styles["header__path"]}`}>
                         <h2>shop</h2>
                         <ol>
                             <li>
@@ -81,7 +113,7 @@ class App extends React.Component
                             </li>
                             <li>
                                 <a href="#">
-                                    <ChevronRightOutlinedIcon style={{fontSize: "2rem"}}/>
+                                    <ChevronRightOutlinedIcon style={{fontSize: "2rem", color: this.state.darkTheme ? "#b4b7bd" : "#6e6b7b"}}/>
                                 </a>
                             </li>
                             <li>
@@ -91,7 +123,7 @@ class App extends React.Component
                             </li>
                             <li>
                                 <a href="#">
-                                    <ChevronRightOutlinedIcon style={{fontSize: "2rem"}}/>
+                                    <ChevronRightOutlinedIcon style={{fontSize: "2rem", color: this.state.darkTheme ? "#b4b7bd" : "#6e6b7b"}}/>
                                 </a>
                             </li>
                             <li>
@@ -110,14 +142,27 @@ class App extends React.Component
                                    changeCategory={this.changeCategoryHandler}
                                    brand={this.state.brand}
                                    changeBrand={this.changeBrandHandler}
+                                   dark={this.state.darkTheme}
                     />
                     <section className={styles["products__sections__wrapper"]}>
                         <ProductSearchBar searchText={this.state.searchText}
                                           changeSearchText={this.searchTextHandler}
                                           displayProducts={this.state.displayProducts}
                                           changeProductsDisplay={this.changeProductsDisplayHandler}
+                                          dark={this.state.darkTheme}
+                                          products={filteredProducts}
+                                          resultsCount={resultsCount}
+                                          sort={this.state.sort}
+                                          changeSort={this.changeSortHandler}
                         />
-                        <ProductGrid products={filteredProducts} displayProducts={this.state.displayProducts}/>
+                        <ProductGrid products={filteredProducts}
+                                     displayProducts={this.state.displayProducts}
+                                     dark={this.state.darkTheme}
+                                     resultsCount={resultsCount}
+                                     productsPerPage={productsPerPage}
+                                     currentPage={this.state.currentPage}
+                                     changePage={this.changeCurrentPageHandler}
+                        />
                     </section>
                 </section>
             </main>

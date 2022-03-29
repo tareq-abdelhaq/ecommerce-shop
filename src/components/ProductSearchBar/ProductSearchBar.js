@@ -12,23 +12,44 @@ class ProductSearchBar extends React.Component
     state = {
         showSort: false
     }
+    toggleSortHandler = () =>{
+        this.setState({showSort: !this.state.showSort})
+    }
+    hideSort = () =>{
+        this.setState({showSort: false})
+    }
     render() {
         return (
             <section className=
                          {this.props.displayProducts === "grid" ? `${styles["products__wrapper"]} ${styles["grid__active"]}`
                 : `${styles["products__wrapper"]} ${styles["list__active"]}`}>
-                <section className={styles["products__control__bar"]}>
-                    <span>27 results found</span>
+                <section className={this.props.dark ? `${styles["products__control__bar"]} ${styles["dark"]}`: styles["products__control__bar"]}>
+                    <span>{this.props.resultsCount} results found</span>
                     <div>
                         <div className={styles["products__control__sort"]}>
                             <button className={styles["products__control__sort__btn"]} onClick={this.toggleSortHandler}>
-                                featured
+                                {this.props.sort}
                                 <KeyboardArrowDownOutlinedIcon />
                             </button>
                             <ul className={`${styles["products__control__sort__wrapper"]} ${this.state.showSort && styles['show']}`}>
-                                <li><a href="#" target="_self">featured</a></li>
-                                <li><a href="#" target="_self">lowest</a></li>
-                                <li><a href="#" target="_self">highest</a></li>
+                                <li onClick={this.hideSort}>
+                                    <label htmlFor="feature">feature</label>
+                                    <input type="radio" id="feature" name="sort" value="feature"
+                                           checked={this.props.sort === "feature"} onChange={this.props.changeSort}
+                                    />
+                                </li>
+                                <li onClick={this.hideSort}>
+                                    <label htmlFor="lowest">lowest</label>
+                                    <input type="radio" id="lowest" name="sort" value="lowest"
+                                           checked={this.props.sort === "lowest"} onChange={this.props.changeSort}
+                                    />
+                                </li>
+                                <li onClick={this.hideSort}>
+                                    <label htmlFor="highest">highest</label>
+                                    <input type="radio" id="highest" name="sort" value="highest"
+                                           checked={this.props.sort === "highest"} onChange={this.props.changeSort}
+                                    />
+                                </li>
                             </ul>
                         </div>
                         <div className={styles["products__control__view"]}>
@@ -49,14 +70,13 @@ class ProductSearchBar extends React.Component
                             </label>
                         </div>
                     </div>
-
                 </section>
-                <section className={styles["products__search__bar"]}>
+                <section className={this.props.dark ? `${styles["products__search__bar"]} ${styles["dark"]}` : styles["products__search__bar"]}>
                     <input type="text" placeholder="Search Product"
                            value={this.props.searchText} onChange={this.props.changeSearchText}
                         />
                     <div>
-                        <SearchOutlinedIcon style={{fontSize: "2.2rem", color: "#a6a4b0"}}/>
+                        <SearchOutlinedIcon style={{fontSize: "2.2rem", color: "#676d7d"}}/>
                     </div>
                 </section>
             </section>

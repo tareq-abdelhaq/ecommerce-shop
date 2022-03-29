@@ -17,8 +17,8 @@ class ProductCard extends React.Component
         }
 
         return(
-            <article className={this.props.display === "grid" ? `${styles["product__card"]} ${styles["grid"]}` :
-                `${styles["product__card"]} ${styles["list"]}`}>
+            <article className={this.props.display === "grid" ? `${styles["product__card"]} ${styles["grid"]} ${this.props.dark ? styles["dark"] : ""}` :
+                `${styles["product__card"]} ${styles["list"]} ${this.props.dark ? styles["dark"] : ""}`}>
                 <div>
                     <a href="#">
                         <img src={this.props.img} alt={this.props.name} />
@@ -32,7 +32,10 @@ class ProductCard extends React.Component
                         {this.props.display === "grid" &&<span className={styles["product__price"]}>${this.props.price}</span>}
                     </div>
                     <h6 className={styles["product__title"]}>
-                        <a href="#">{this.props.name} By <span className={styles["product__title__brand"]}>{this.props.brand}</span> </a>
+                        <a href="#">
+                            {this.props.name}
+                            <small>{this.props.display !== "grid" && "By "} {this.props.display !== "grid" && <span className={styles["product__title__brand"]}>{this.props.brand}</span>}</small>
+                        </a>
                     </h6>
                     <p className={styles["product__description"]}>
                         {this.props.discription}

@@ -44,9 +44,9 @@ class ProductFilter extends React.Component
 
         return(
             <aside>
-                <h6 className={styles["product__filters__title"]}> filters </h6>
-                <div className={styles["product__filters__wrapper"]}>
-                    <FilterTitle first>multi range</FilterTitle>
+                <h6 className={styles["product__filters__title"]} style={{color: this.props.dark && "#d0d2d6"}}> filters </h6>
+                <div className={this.props.dark ? `${styles["product__filters__wrapper"]} ${styles["dark"]}` : styles["product__filters__wrapper"]}>
+                    <FilterTitle first dark={this.props.dark}>multi range</FilterTitle>
                     <ul className={styles["filter__section"]}>
                         <li>
                             <input type="radio" id="all__prices" value= "allPrices" name="price"
@@ -87,16 +87,16 @@ class ProductFilter extends React.Component
                             <label htmlFor="greater__five">&gt;= $500</label>
                         </li>
                     </ul>
-                    <FilterTitle> price range </FilterTitle>
+                    <FilterTitle dark={this.props.dark}> price range </FilterTitle>
                     <div className={styles["slider"]}>
                         <div className={`${styles["slider__circle"]} ${styles["left"]}`} />
                         <div className={`${styles["slider__circle"]} ${styles["right"]}`} />
                     </div>
-                    <FilterTitle>Categories</FilterTitle>
+                    <FilterTitle dark={this.props.dark}>Categories</FilterTitle>
                     <ul className={styles["filter__section"]}>
                         {categoryList}
                     </ul>
-                    <FilterTitle> brands </FilterTitle>
+                    <FilterTitle dark={this.props.dark}> brands </FilterTitle>
                     <ul className={styles["filter__section"]}>
                         {brandsList}
                     </ul>

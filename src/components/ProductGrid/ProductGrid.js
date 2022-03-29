@@ -1,7 +1,8 @@
 import React from "react"
 import styles from "./ProductGrid.module.css"
 import ProductCard from "../ProductCard/ProductCard";
-import {Pagination} from "@mui/material";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 class ProductGrid extends React.Component
 {
@@ -25,16 +26,56 @@ class ProductGrid extends React.Component
     turnListHandler = () => {
         this.setState({gridView : false})
     }
+    onePageBackHandler = () =>{
+        if (this.props.currentPage !== 1)
+        {
+            this.props.changePage(this.props.currentPage-1)
+        }
+    }
+    onePageForwardHandler = () =>{
+        if (this.props.currentPage !== Math.ceil(this.props.resultsCount/this.props.productsPerPage))
+        {
+            this.props.changePage(this.props.currentPage+1)
+        }
+    }
 
     render() {
         const productList = this.props.products.map(product => {
-            return <ProductCard key={product.id} {...product} display={this.props.displayProducts === "grid" ? "grid" : "list"}/>
+            return <ProductCard key={product.id} {...product} dark={this.props.dark} display={this.props.displayProducts === "grid" ? "grid" : "list"}/>
         })
+        const pageNumbers = []
+        for(let i = 1 ; i<= Math.ceil(this.props.resultsCount/this.props.productsPerPage); i++){
+            pageNumbers.push(i)
+        }
 
         return(
             <section className={styles["products__grid"]}>
                 {productList}
-                <Pagination count={3} className={styles["pagination"]} color={"primary"}/>
+                <div className={styles["pagination"]}>
+                    <li onClick={this.onePageBackHandler}
+                        className={this.props.currentPage === pageNumbers[0] ? styles["disabled"] : ""}
+                    >
+                        <ArrowBackIosNewIcon />
+                    </li>
+                    <ul className={styles["page__numbers"]}>
+                        {
+                            pageNumbers.map(pageNumber => {
+                                return (
+                                    <li key={pageNumber}
+                                        onClick={(e) => this.props.changePage(pageNumber)}
+                                        className={this.props.currentPage === pageNumber ? styles["active"]:""}
+                                    >
+                                        {pageNumber}
+                                    </li>
+                            )})
+                        }
+                    </ul>
+                    <li onClick={this.onePageForwardHandler}
+                        className={this.props.currentPage === pageNumbers.length ? styles["disabled"] : ""}
+                    >
+                        <ArrowForwardIosIcon />
+                    </li>
+                </div>
             </section>
         )
     }

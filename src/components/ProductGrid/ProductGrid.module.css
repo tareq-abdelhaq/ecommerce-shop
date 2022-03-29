@@ -9,4 +9,53 @@
 {
     grid-column: 1/-1;
     justify-self: center;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.products__grid .pagination ul.page__numbers
+{
+    border-radius: 7rem;
+    background-color: rgb(243, 242, 247);
+    display: flex;
+    align-items: center;
+}
+.products__grid .pagination li
+{
+    padding: 0.7rem 1.4rem;
+    border-radius: 7rem;
+    color: #6e6b7b;
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.products__grid .pagination li:hover
+{
+    color: #7367f0;
+}
+
+.products__grid .pagination li.active{
+    background-color: #7367f0;
+    color: #FFF;
+}
+.products__grid .pagination > li
+{
+    font-size: 0.3rem;
+    padding: 0.8rem 1.2rem;
+
+}
+.products__grid .pagination > li.disabled
+{
+    cursor: initial;
+    background-color: rgb(243, 242, 247);
+    color: #6e6b7b;
+}
+.products__grid .pagination > li.disabled:hover{
+    pointer-events: none;
+}
+.products__grid .pagination > li:hover
+{
+    background-color: #7367f0;
+    color: #FFF;
 }

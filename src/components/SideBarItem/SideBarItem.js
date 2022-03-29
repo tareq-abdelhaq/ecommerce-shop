@@ -6,10 +6,12 @@ class SideBarItem extends React.Component
 
     render() {
         return (
-            <li className={styles["side__bar__item"]}>
+            <li className={this.props.dark ? `${styles["side__bar__item"]} ${styles["dark"]}` : styles["side__bar__item"]}>
                 <a href="#" className={this.props.active && styles["active"]}>
                     {this.props.icon}
-                    <p className={styles["side__bar__anchor__text"]}>{this.props.content}</p>
+                    <p className={this.props.dark ? styles["dark"] : "" }>
+                        {this.props.content}
+                    </p>
                 </a>
             </li>
         );

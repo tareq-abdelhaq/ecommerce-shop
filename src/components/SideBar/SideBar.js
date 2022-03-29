@@ -36,7 +36,7 @@ class SideBar extends React.Component
 
     render() {
         return (
-            <aside className={styles["side__bar"]}>
+            <aside className={this.props.darkTheme ? `${styles["side__bar"]} ${styles["dark"]}` : styles["side__bar"]}>
                 <ul className={styles["side__brand"]}>
                     <li>
                         <a href="#">
@@ -56,136 +56,157 @@ class SideBar extends React.Component
                    </SideBarHeader>
                     <SideBarItem
                         icon={
-                            <EmailOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <EmailOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="email"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <ChatBubbleOutlineIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <ChatBubbleOutlineIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="chat"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <PlaylistAddCheckOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <PlaylistAddCheckOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="todo"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <CalendarTodayOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <CalendarTodayOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="calendar"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <DescriptionOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <DescriptionOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="invoice"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <ShoppingCartOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <ShoppingCartOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="ecommerce"
+                        dark={this.props.darkTheme}
                         active={true}
                     />
                     <SideBarItem
                         icon={
-                            <PersonOutlineOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <PersonOutlineOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="user"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <InsertDriveFileOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <InsertDriveFileOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="pages"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarHeader>
                         user interface
                     </SideBarHeader>
                     <SideBarItem
                         icon={
-                            <ColorLensOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <ColorLensOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="colors"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <FormatSizeOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <FormatSizeOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="typography"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <VisibilityOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <VisibilityOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="feather"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <CreditCardOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <CreditCardOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="cards"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <AddCircleOutlineOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <AddCircleOutlineOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="extensions"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <ViewQuiltOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <ViewQuiltOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="page layout"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarHeader>
                         Forms & Tables
                     </SideBarHeader>
                     <SideBarItem
                         icon={
-                            <VerticalSplitOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <VerticalSplitOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="forms elements"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <VerticalSplitOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <VerticalSplitOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="form layout"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <ViewInArOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <ViewInArOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="form wizard"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <TaskAltOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <TaskAltOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="form validation"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <VerticalSplitOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <VerticalSplitOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="form repeater"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <SplitscreenOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <SplitscreenOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="BS table"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <AutoAwesomeMosaicOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <AutoAwesomeMosaicOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="good table"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarHeader>
                         Charts & Maps
@@ -193,48 +214,55 @@ class SideBar extends React.Component
 
                     <SideBarItem
                         icon={
-                            <PieChartOutlineOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <PieChartOutlineOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="charts"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <ReceiptLongOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <ReceiptLongOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="leaflet"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarHeader>
                         Others
                     </SideBarHeader>
                     <SideBarItem
                         icon={
-                            <ShieldOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <ShieldOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="access control"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <MenuOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <MenuOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="menu levels"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <RemoveModeratorOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <RemoveModeratorOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="desabled menu"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <SupportOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <SupportOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="raise support"
+                        dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <FeedOutlinedIcon style={{color: "#625f6e", fontSize: "2rem"}} />
+                            <FeedOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
                         content="documentation"
+                        dark={this.props.darkTheme}
                     />
                 </ul>
             </aside>

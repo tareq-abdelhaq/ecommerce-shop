@@ -1,3 +1,13 @@
+.body__wrapper
+{
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+}
+.body__wrapper.dark
+{
+    background-color: #161d31;
+}
 .container
 {
     padding: 10.8rem 2.8rem 0 2.8rem;
@@ -17,6 +27,23 @@
     flex-grow: 1;
     align-items: center;
 
+}
+.header__path ol li:last-child
+{
+    text-transform: capitalize;
+}
+.header__path.dark a.active
+{
+    color: #7367f0;
+}
+.header__path.dark ol li:last-child
+{
+    color: #b4b7bd;
+}
+.header__path.dark h2
+{
+    color: #d0d2d6;
+    border-right-color: #3b4253;
 }
 .header__path h2
 {

@@ -9,6 +9,10 @@
     box-shadow: 0 0 15px 0 rgba(34,41,47,.05);
     overflow-y: auto;
 }
+.side__bar.dark
+{
+    background-color: #283046;
+}
 .side__brand
 {
     display: flex;
