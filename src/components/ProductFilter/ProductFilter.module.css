@@ -70,3 +70,31 @@
         display: none;
     }
 }
+.filter__section li label
+{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.filter__section li input
+{
+    display: none ;
+}
+
+.filter__section li .label__text
+{
+    padding-left: 0.4rem;
+}
+.filter__section li input:checked + .custom__radio
+{
+    background-color: #7367f0;
+    border: none;
+}
+.filter__section li .custom__radio
+{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #7367f0;
+}

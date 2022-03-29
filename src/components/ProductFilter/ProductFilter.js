@@ -12,13 +12,16 @@ class ProductFilter extends React.Component
         const categories = [...(new Set(allCategories))]
         categories.unshift("allCategories");
         return  categories.map((category,index) => {
-            return  <li key={category}>
-                        <input type="radio" id={category} name="category" value={category}
+            return <li key={category}>
+                    <label>
+                        <input type="radio" name="category" value={category}
                                checked={this.props.category === category}
                                onChange={this.props.changeCategory}
                         />
-                        <label htmlFor={category}>{index === 0 ? "All" : category}</label>
-                    </li>
+                        <span className={styles["custom__radio"]} />
+                        <span className={styles["label__text"]}>{index === 0 ? "All" : category}</span>
+                    </label>
+                   </li>
         })
     }
 
@@ -28,11 +31,14 @@ class ProductFilter extends React.Component
         brands.unshift("allBrands")
         return  brands.map((brand,index) => {
             return  <li key={brand}>
-                        <input type="radio" id={brand} name="brand" value={brand}
-                               checked={this.props.brand === brand}
-                               onChange={this.props.changeBrand}
-                        />
-                        <label htmlFor={brand}>{index === 0 ? "All" : brand}</label>
+                        <label>
+                            <input type="radio" name="brand" value={brand}
+                                   checked={this.props.brand === brand}
+                                   onChange={this.props.changeBrand}
+                            />
+                            <span className={styles["custom__radio"]} />
+                            <span className={styles["label__text"]}>{index === 0 ? "All" : brand}</span>
+                        </label>
                     </li>
         })
     }
@@ -49,42 +55,54 @@ class ProductFilter extends React.Component
                     <FilterTitle first dark={this.props.dark}>multi range</FilterTitle>
                     <ul className={styles["filter__section"]}>
                         <li>
-                            <input type="radio" id="all__prices" value= "allPrices" name="price"
-                                   checked={this.props.priceRange === "allPrices"}
-                                   onChange={this.props.changePriceRange}
-                            />
-                            <label htmlFor="all__prices">All</label>
+                            <label>
+                                <input type="radio" value= "allPrices" name="price"
+                                       checked={this.props.priceRange === "allPrices"}
+                                       onChange={this.props.changePriceRange}
+                                />
+                                <span className={styles["custom__radio"]} />
+                                <span className={styles["label__text"]}>All</span>
+                            </label>
                         </li>
                         <li>
-                            <input type="radio" id="less__ten" value="less than 10" name="price"
-                                   checked={this.props.priceRange === "less than 10"}
-                                   onChange={this.props.changePriceRange}
-                            />
-                            <label htmlFor="less__ten">&lt;= $10</label>
-
+                            <label>
+                                <input type="radio" value="less than 10" name="price"
+                                       checked={this.props.priceRange === "less than 10"}
+                                       onChange={this.props.changePriceRange}
+                                />
+                                <span className={styles["custom__radio"]} />
+                                <span className={styles["label__text"]}>&lt; 10</span>
+                            </label>
                         </li>
                         <li>
-                            <input type="radio" id="ten__hundred" value="between 10 and 100" name="price"
-                                   checked={this.props.priceRange === "between 10 and 100"}
-                                   onChange={this.props.changePriceRange}
-                            />
-                            <label htmlFor="ten__hundred">$10 - $100</label>
-
+                            <label>
+                                <input type="radio" value="between 10 and 100" name="price"
+                                       checked={this.props.priceRange === "between 10 and 100"}
+                                       onChange={this.props.changePriceRange}
+                                />
+                                <span className={styles["custom__radio"]} />
+                                <span className={styles["label__text"]}>$10 - $100</span>
+                            </label>
                         </li>
                         <li>
-                            <input type="radio" id="hundred__five" value= "between 100 and 500" name="price"
-                                   checked={this.props.priceRange === "between 100 and 500"}
-                                   onChange={this.props.changePriceRange}
-                            />
-                            <label htmlFor="hundred__five">$100 - $500</label>
-
+                            <label>
+                                <input type="radio" value= "between 100 and 500" name="price"
+                                       checked={this.props.priceRange === "between 100 and 500"}
+                                       onChange={this.props.changePriceRange}
+                                />
+                                <span className={styles["custom__radio"]} />
+                                <span className={styles["label__text"]}>$100 - $500</span>
+                            </label>
                         </li>
                         <li>
-                            <input type="radio" id="greater__five" value="greater than 500" name="price"
-                                   checked={this.props.priceRange === "greater than 500"}
-                                   onChange={this.props.changePriceRange}
-                            />
-                            <label htmlFor="greater__five">&gt;= $500</label>
+                            <label>
+                                <input type="radio" value="greater than 500" name="price"
+                                       checked={this.props.priceRange === "greater than 500"}
+                                       onChange={this.props.changePriceRange}
+                                />
+                                <span className={styles["custom__radio"]} />
+                                <span className={styles["label__text"]}>&gt;= $500</span>
+                            </label>
                         </li>
                     </ul>
                     <FilterTitle dark={this.props.dark}> price range </FilterTitle>
