@@ -10,22 +10,40 @@ import ProductSearchBar from "./components/ProductSearchBar/ProductSearchBar"
 import ProductGrid from "./components/ProductGrid/ProductGrid";
 import products from "./data"
 
+function getPrices()
+{
+    return products.map(product => product.price)
+}
+function getMinPrice()
+{
+    return Math.floor(Math.min(...getPrices()))
+}
+function getMaxPrice()
+{
+    return Math.ceil(Math.max(...getPrices()))
+}
 
 class App extends React.Component
 {
-  state = {
-      searchText: "",
-      priceRange: "allPrices",
-      category: "allCategories",
-      brand: "allBrands",
-      displayProducts: "grid",
-      darkTheme: false,
-      sort: "feature",
-      currentPage: 1,
-      windowWidth: window.innerWidth,
-      showSideBar: false,
-      showProductFilter: false
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchText: "",
+            priceRange: "allPrices",
+            minInputRange: getMinPrice(),
+            maxInputRange: getMaxPrice(),
+            category: "allCategories",
+            brand: "allBrands",
+            displayProducts: "grid",
+            darkTheme: false,
+            sort: "feature",
+            currentPage: 1,
+            windowWidth: window.innerWidth,
+            showSideBar: false,
+            showProductFilter: false
+        }
+    }
+
     componentDidMount()
     {
         window.onresize = () => {
@@ -69,6 +87,19 @@ class App extends React.Component
   hideProductFilter = () => {
       this.setState({showProductFilter: false})
   }
+  priceSliderChangeHandler = (e) => {
+      let priceGap = 10;
+      if (this.state.minInputRange - this.state.maxInputRange >= priceGap){
+          if (e.target.name === "minInputRange"){
+              this.setState({[e.target.name]: this.state.maxInputRange-priceGap})
+          }else {
+              this.setState({[e.target.name]: this.state.minInputRange+priceGap})
+          }
+      }else{
+
+      }
+    this.setState({[e.target.name]: parseInt(e.target.value)})
+  }
   render() {
       let filteredProducts = [...products];
       // search filter
@@ -92,6 +123,14 @@ class App extends React.Component
                   return product.price > 500
               }
           })
+      }
+      // price slider filter
+      if (this.state.minInputRange !== getMinPrice() || this.state.maxInputRange !== getMaxPrice())
+      {
+          console.log(this.state.minInputRange,this.state.maxInputRange)
+          filteredProducts = filteredProducts.filter(product => (
+              product.price >= this.state.minInputRange && product.price <= this.state.maxInputRange
+          ))
       }
       // category filter
       if (this.state.category !== "allCategories"){
@@ -161,6 +200,13 @@ class App extends React.Component
                 <section className={styles["products__section"]}>
                     <ProductFilter products={products} priceRange={this.state.priceRange}
                                    changePriceRange={this.priceChangeHandler}
+                                   minInputRange={this.state.minInputRange}
+                                   minPercentage={(this.state.minInputRange/getMaxPrice())*100}
+                                   minRange={getMinPrice()}
+                                   maxInputRange={this.state.maxInputRange}
+                                   maxPercentage={100 - (this.state.maxInputRange/getMaxPrice())*100}
+                                   maxRange={getMaxPrice()}
+                                   changePriceSlider={this.priceSliderChangeHandler}
                                    category={this.state.category}
                                    changeCategory={this.changeCategoryHandler}
                                    brand={this.state.brand}

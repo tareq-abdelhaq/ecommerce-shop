@@ -108,8 +108,25 @@ class ProductFilter extends React.Component
                     </ul>
                     <FilterTitle dark={this.props.dark}> price range </FilterTitle>
                     <div className={styles["slider"]}>
-                        <div className={`${styles["slider__circle"]} ${styles["left"]}`} />
-                        <div className={`${styles["slider__circle"]} ${styles["right"]}`} />
+                        <div className={styles["min__value"]} style={{left: `${this.props.minPercentage}%`}}>
+                            {this.props.minInputRange}
+                        </div>
+                        <div className={styles["progress"]}
+                             style={{left: `${this.props.minPercentage}%`,right: `${this.props.maxPercentage}%`}}
+                        />
+                        <div className={styles["max__value"]} style={{right: `${this.props.maxPercentage}%`}}>
+                            {this.props.maxInputRange}
+                        </div>
+                    </div>
+                    <div className={styles["range__inputs"]}>
+                        <input type="range" className={styles["min__range__input"]} min={this.props.minRange}
+                               max={this.props.maxRange} value={this.props.minInputRange}
+                               onChange={this.props.changePriceSlider} name="minInputRange"
+                        />
+                        <input type="range" className={styles["max__range__input"]} min={this.props.minRange}
+                               max={this.props.maxRange} value={this.props.maxInputRange}
+                               onChange={this.props.changePriceSlider} name="maxInputRange"
+                        />
                     </div>
                     <FilterTitle dark={this.props.dark}>Categories</FilterTitle>
                     <ul className={styles["filter__section"]}>
