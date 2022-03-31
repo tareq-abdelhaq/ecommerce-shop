@@ -21,8 +21,17 @@ class App extends React.Component
       displayProducts: "grid",
       darkTheme: false,
       sort: "feature",
-      currentPage: 1
+      currentPage: 1,
+      windowWidth: window.innerWidth,
+      showSideBar: false,
+      showProductFilter: false
   }
+    componentDidMount()
+    {
+        window.onresize = () => {
+            this.setState({windowWidth: window.innerWidth})
+        }
+    }
 
   searchTextHandler = (e)=>{
       this.setState({searchText: e.target.value})
@@ -47,6 +56,18 @@ class App extends React.Component
   }
   changeCurrentPageHandler = (pageNumber) => {
       this.setState({currentPage: pageNumber})
+  }
+  showSideBar = () => {
+      this.setState({showSideBar: true})
+  }
+  hideSideBar = () => {
+      this.setState({showSideBar: false})
+  }
+  showProductFilter = () => {
+      this.setState({showProductFilter: true})
+  }
+  hideProductFilter = () => {
+      this.setState({showProductFilter: false})
   }
   render() {
       let filteredProducts = [...products];
@@ -99,8 +120,10 @@ class App extends React.Component
         <div className={this.state.darkTheme ? `${styles["body__wrapper"]} ${styles["dark"]}`
             : `${styles["body__wrapper"]}`}
         >
-            <NavBar darkTheme={this.state.darkTheme} changeTheme={this.toggleTheme}/>
-            <SideBar darkTheme={this.state.darkTheme}/>
+            <NavBar darkTheme={this.state.darkTheme} changeTheme={this.toggleTheme} windowWidth={this.state.windowWidth}
+                    showSideBar={this.showSideBar}
+            />
+            <SideBar darkTheme={this.state.darkTheme} showSideBar={this.state.showSideBar} hideSideBar={this.hideSideBar}/>
             <main className={styles["container"]}>
                 <header className={styles["main__header"]}>
                     <div className={this.state.darkTheme ? `${styles["header__path"]} ${styles["dark"]}` : `${styles["header__path"]}`}>
@@ -143,6 +166,10 @@ class App extends React.Component
                                    brand={this.state.brand}
                                    changeBrand={this.changeBrandHandler}
                                    dark={this.state.darkTheme}
+                                   showProductFilter={this.state.showProductFilter}
+                                   hideProductFilter={this.hideProductFilter}
+
+
                     />
                     <section className={styles["products__sections__wrapper"]}>
                         <ProductSearchBar searchText={this.state.searchText}
@@ -154,6 +181,8 @@ class App extends React.Component
                                           resultsCount={resultsCount}
                                           sort={this.state.sort}
                                           changeSort={this.changeSortHandler}
+                                          windowWidth={this.state.windowWidth}
+                                          showProductFilter={this.showProductFilter}
                         />
                         <ProductGrid products={filteredProducts}
                                      displayProducts={this.state.displayProducts}
@@ -162,6 +191,7 @@ class App extends React.Component
                                      productsPerPage={productsPerPage}
                                      currentPage={this.state.currentPage}
                                      changePage={this.changeCurrentPageHandler}
+
                         />
                     </section>
                 </section>

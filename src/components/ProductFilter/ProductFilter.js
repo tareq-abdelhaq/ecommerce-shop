@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "./ProductFilter.module.css"
 import FilterTitle from "../FilterTitle/FilterTitle";
-
-
+import StarIcon from '@mui/icons-material/Star';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
 
 
 class ProductFilter extends React.Component
@@ -49,7 +49,8 @@ class ProductFilter extends React.Component
         const brandsList = this.getUniqueBrands()
 
         return(
-            <aside className={styles["aside__products__filter"]}>
+            <>
+            <aside className={`${styles["aside__products__filter"]} ${this.props.showProductFilter && styles["show"]}`}>
                 <h6 className={styles["product__filters__title"]} style={{color: this.props.dark && "#d0d2d6"}}> filters </h6>
                 <div className={this.props.dark ? `${styles["product__filters__wrapper"]} ${styles["dark"]}` : styles["product__filters__wrapper"]}>
                     <FilterTitle first dark={this.props.dark}>multi range</FilterTitle>
@@ -118,8 +119,37 @@ class ProductFilter extends React.Component
                     <ul className={styles["filter__section"]}>
                         {brandsList}
                     </ul>
+                    <FilterTitle> ratings </FilterTitle>
+                    <ul className={styles["products__ratings"]}>
+                        <li className={styles["rating__row"]}>
+                            <a>
+                                <StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/> <span>& up</span>
+                            </a>
+                            <span>160</span>
+                        </li>
+                        <li className={styles["rating__row"]}>
+                            <a>
+                                <StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/> <span>& up</span>
+                            </a>
+                            <span>176</span>
+                        </li>
+                        <li className={styles["rating__row"]}>
+                            <a>
+                                <StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/> <span>& up</span>
+                            </a>
+                            <span>291</span>
+                        </li>
+                        <li className={styles["rating__row"]}>
+                            <a>
+                                <StarIcon style={{color: "#ff9f43", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/><StarOutlineIcon style={{color: "#b9b9c3", fontSize:"2rem"}}/> <span>& up</span>
+                            </a>
+                            <span>190</span>
+                        </li>
+                    </ul>
                 </div>
             </aside>
+            <div className={`${styles["overlay"]} ${this.props.showProductFilter && styles["show"]}`} onClick={this.props.hideProductFilter}/>
+            </>
         )
     }
 }

@@ -10,6 +10,8 @@ import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
+
 
 
 
@@ -17,16 +19,24 @@ class NavBar extends React.Component
 {
 
 
+
     render() {
+
         return (
             <nav className={this.props.darkTheme ? `${styles["nav__bar"]} ${styles["dark"]}` : styles["nav__bar"]}>
-                <ul className={styles["nav__bookmarks"]}>
+                {
+                    this.props.windowWidth <= 1300 &&
+                    <li className={`${styles["nav__bookmark"]} ${styles["hamburger__icon"]}`} onClick={this.props.showSideBar}>
+                        <MenuIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#6e6b7b", fontSize: "2.4rem",cursor: "pointer",marginRight:"1.2rem"}}
+                        />
+                    </li>
+                }
+                <ul className={`${styles["nav__bookmarks"]} ${this.props.windowWidth <= 992 && styles["hide"]}`}>
                     <li className={styles["nav__bookmark"]}>
                         <a href="#">
                             <CalendarTodayOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#6e6b7b",fontSize: "2.4rem" }}
                             />
                         </a>
-
                     </li>
                     <li className={styles["nav__bookmark"]}>
                         <a href="#">

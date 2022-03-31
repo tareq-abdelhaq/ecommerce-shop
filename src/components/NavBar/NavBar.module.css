@@ -27,6 +27,10 @@
     align-items: center;
     flex-grow: 1;
 }
+.nav__bookmarks.hide
+{
+    display: none;
+}
 .nav__bookmarks .nav__bookmark
 {
     margin-right: 1.2rem;
@@ -160,9 +164,13 @@
     .nav__admin
     {
         width: 100%;
-        justify-content: space-evenly;
+        /*justify-content: space-evenly;*/
     }
     .nav__admin__text
+    {
+        display: none;
+    }
+    .nav__admin__theme
     {
         display: none;
     }

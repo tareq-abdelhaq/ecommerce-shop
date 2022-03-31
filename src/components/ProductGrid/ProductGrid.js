@@ -52,12 +52,14 @@ class ProductGrid extends React.Component
             <section className={styles["products__grid"]}>
                 {productList}
                 <div className={styles["pagination"]}>
-                    <li onClick={this.onePageBackHandler}
-                        className={this.props.currentPage === pageNumbers[0] ? styles["disabled"] : ""}
-                    >
-                        <ArrowBackIosNewIcon />
-                    </li>
-                    <ul className={styles["page__numbers"]}>
+                    {
+                        // this.props.wind
+                        <li onClick={this.onePageBackHandler}
+                            className={this.props.currentPage === pageNumbers[0] ? styles["disabled"] : ""}
+                        >
+                            <ArrowBackIosNewIcon/>
+                        </li>
+                    }                    <ul className={styles["page__numbers"]}>
                         {
                             pageNumbers.map(pageNumber => {
                                 return (

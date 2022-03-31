@@ -4,6 +4,7 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 class ProductSearchBar extends React.Component
@@ -24,7 +25,9 @@ class ProductSearchBar extends React.Component
                          {this.props.displayProducts === "grid" ? `${styles["products__wrapper"]} ${styles["grid__active"]}`
                 : `${styles["products__wrapper"]} ${styles["list__active"]}`}>
                 <section className={this.props.dark ? `${styles["products__control__bar"]} ${styles["dark"]}`: styles["products__control__bar"]}>
-                    <span>{this.props.resultsCount} results found</span>
+                    {this.props.windowWidth <= 992 ? <MenuIcon style={{color: this.props.dark && "rgb(208, 210, 214)", fontSize: "2.5rem", cursor: "pointer"}} onClick={this.props.showProductFilter}/>
+                        : <span>{this.props.resultsCount} results found</span>
+                    }
                     <div>
                         <div className={styles["products__control__sort"]}>
                             <button className={styles["products__control__sort__btn"]} onClick={this.toggleSortHandler}>

@@ -9,6 +9,22 @@
     box-shadow: 0 0 15px 0 rgba(34,41,47,.05);
     overflow-y: auto;
     transition: all .4s cubic-bezier(.25,.8,.25,1),background 0s;
+    z-index: 1100;
+}
+.overlay
+{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    height: 100vh;
+    background-color: rgba(34,41,47,.5);
+    width: 100%;
+}
+.overlay.show
+{
+    display: block;
 }
 .side__bar.dark
 {
@@ -74,5 +90,9 @@
     {
         width: 0;
     }
+}
+aside.show
+{
+    width: 260px;
 }
 

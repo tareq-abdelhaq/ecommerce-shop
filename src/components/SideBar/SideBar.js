@@ -28,6 +28,7 @@ import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import SideBarHeader from "../SideBarHeader/SideBarHeader";
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatSizeOutlinedIcon from '@mui/icons-material/FormatSizeOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 class SideBar extends React.Component
@@ -36,7 +37,11 @@ class SideBar extends React.Component
 
     render() {
         return (
-            <aside className={this.props.darkTheme ? `${styles["side__bar"]} ${styles["dark"]}` : styles["side__bar"]}>
+            <aside className=
+                       {this.props.darkTheme ? `${styles["side__bar"]} ${styles["dark"]} ${this.props.showSideBar && styles["show"]}`
+                        : `${styles["side__bar"]} ${this.props.showSideBar && styles["show"]}`
+                       }
+            >
                 <ul className={styles["side__brand"]}>
                     <li>
                         <a href="#">
@@ -46,8 +51,10 @@ class SideBar extends React.Component
                             <h2 className={styles["side__brand__text"]}> vuexy </h2>
                         </a>
                     </li>
-                    <li>
-                        <a href="#" />
+                    <li onClick={this.props.hideSideBar}>
+                        {this.props.showSideBar ? <CloseIcon style={{color: "#5e50ee", fontSize: "2rem", cursor: "pointer"}}/>
+                            : <a href="#"/>
+                        }
                     </li>
                 </ul>
                 <ul className={styles["side__bar__navigation"]}>
@@ -265,6 +272,9 @@ class SideBar extends React.Component
                         dark={this.props.darkTheme}
                     />
                 </ul>
+                <div className={`${styles["overlay"]} ${this.props.showSideBar && styles["show"]}`}
+                onClick={this.props.hideSideBar}
+                />
             </aside>
         );
     }
