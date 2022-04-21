@@ -1,0 +1,11 @@
+.SubMenu
+{
+    max-height: 0;
+    transition: max-height 0.35s ease-out;
+    overflow: hidden;
+}
+.SubMenu.Show
+{
+    max-height: 1400px;
+    transition: max-height 0.35s ease-in
+}

@@ -29,6 +29,7 @@ import SideBarHeader from "../SideBarHeader/SideBarHeader";
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import FormatSizeOutlinedIcon from '@mui/icons-material/FormatSizeOutlined';
 import CloseIcon from '@mui/icons-material/Close';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 
 class SideBar extends React.Component
@@ -58,6 +59,14 @@ class SideBar extends React.Component
                     </li>
                 </ul>
                 <ul className={styles["side__bar__navigation"]}>
+                    <SideBarItem
+                        icon={
+                            <HomeOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2.5rem"}} />
+                        }
+                        content="dashboard"
+                        dark={this.props.darkTheme}
+                        extendable={{count: 2, className: "info",items: ["eCommerce","Analytics"]}}
+                    />
                    <SideBarHeader>
                        apps & pages
                    </SideBarHeader>
@@ -95,6 +104,7 @@ class SideBar extends React.Component
                         }
                         content="invoice"
                         dark={this.props.darkTheme}
+                        extendable={{items: ["List", "Preview", "Edit", "Add"]}}
                     />
                     <SideBarItem
                         icon={
@@ -103,6 +113,7 @@ class SideBar extends React.Component
                         content="ecommerce"
                         dark={this.props.darkTheme}
                         active={true}
+                        extendable={{items: ["Shop", "Details","Wishlist","Checkout"]}}
                     />
                     <SideBarItem
                         icon={
@@ -110,6 +121,7 @@ class SideBar extends React.Component
                         }
                         content="user"
                         dark={this.props.darkTheme}
+                        extendable={{items: ["List", "View","Edit"]}}
                     />
                     <SideBarItem
                         icon={
@@ -117,22 +129,24 @@ class SideBar extends React.Component
                         }
                         content="pages"
                         dark={this.props.darkTheme}
+                        extendable={{items: ["Authentication", "Account Settings","Profile","Faq",
+                                            "Knowledge Base","Pricing","Blog","Mail Templates","Miscellaneous"]}}
                     />
                     <SideBarHeader>
                         user interface
                     </SideBarHeader>
                     <SideBarItem
                         icon={
-                            <ColorLensOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
+                            <FormatSizeOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
-                        content="colors"
+                        content="typography"
                         dark={this.props.darkTheme}
                     />
                     <SideBarItem
                         icon={
-                            <FormatSizeOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
+                            <ColorLensOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
                         }
-                        content="typography"
+                        content="colors"
                         dark={this.props.darkTheme}
                     />
                     <SideBarItem
@@ -148,6 +162,19 @@ class SideBar extends React.Component
                         }
                         content="cards"
                         dark={this.props.darkTheme}
+                        extendable={{status: "new", items: ["Basic", "Advance","Statistics","Analytics","Card Actions"]}}
+                    />
+                    <SideBarItem
+                        icon={
+                            <FormatSizeOutlinedIcon style={{color: this.props.darkTheme ? "#d0d2d6" : "#625f6e", fontSize: "2rem"}} />
+                        }
+                        content="components"
+                        dark={this.props.darkTheme}
+                        extendable={{items: ["Alert", "Aspect","Avatar","Badge","BreadCrumb"
+                                ,"Button","Button Group","Button Toolbar","Calender","Carousel",
+                                "Collapse","Dropdown","Embed","Image","List Group","Media Objects","Modal","Nav",
+                                "Overlay","Pagination","Pagination Nav","Pill","Pill Badge","Popover","Progress",
+                                "Sidebar","Spinner","Tab","Time","Timeline","Toasts","Tooltip"]}}
                     />
                     <SideBarItem
                         icon={
@@ -155,6 +182,8 @@ class SideBar extends React.Component
                         }
                         content="extensions"
                         dark={this.props.darkTheme}
+                        extendable={{items: ["Sweet Alert", "Toastification","Slider","Drag & Drop","Tour",
+                                    "Clipboard","Context Menu","Swiper"]}}
                     />
                     <SideBarItem
                         icon={
@@ -162,6 +191,7 @@ class SideBar extends React.Component
                         }
                         content="page layout"
                         dark={this.props.darkTheme}
+                        extendable={{items: ["Collapsed Menu", "Layout Boxed","Without Menu","Layout Empty","Layout Blank"]}}
                     />
                     <SideBarHeader>
                         Forms & Tables
@@ -172,6 +202,10 @@ class SideBar extends React.Component
                         }
                         content="forms elements"
                         dark={this.props.darkTheme}
+                        extendable={{items: ["Input", "Input Group","Input Mask",
+                                    "Textarea","Auto Suggest", "Checkbox", "Radio", "Switch", "Select", "Vue Select",
+                                    "Spinbutton", "File Input", "Quill Editor", "Form Datepicker", "Form TimePicker",
+                                    "Date Time Picker", "Form Rating", "Form Tag"]}}
                     />
                     <SideBarItem
                         icon={
@@ -225,6 +259,7 @@ class SideBar extends React.Component
                         }
                         content="charts"
                         dark={this.props.darkTheme}
+                        extendable={{count: 3,className:"danger",items: ["Apex Chart","Chartjs", "Echart"]}}
                     />
                     <SideBarItem
                         icon={
@@ -249,6 +284,7 @@ class SideBar extends React.Component
                         }
                         content="menu levels"
                         dark={this.props.darkTheme}
+                        extendable={{items: ["Menu Level 2.1","Menu Level 2.2"]}}
                     />
                     <SideBarItem
                         icon={
