@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/eCommerce-Shop-UI/static/css/main.0bf43292.css",
-    "main.js": "/eCommerce-Shop-UI/static/js/main.0ddb8e2f.js",
+    "main.css": "/eCommerce-Shop-UI/static/css/main.eb8bd1fb.css",
+    "main.js": "/eCommerce-Shop-UI/static/js/main.d4f8d88d.js",
+    "static/media/tarek.jpeg": "/eCommerce-Shop-UI/static/media/tarek.54c3ae3d108b40490eaa.jpeg",
+    "static/media/product.png": "/eCommerce-Shop-UI/static/media/product.4a2706361138e25533f3.png",
+    "static/media/logo.jpg": "/eCommerce-Shop-UI/static/media/logo.d3b3e02a4d6ea85e5fe9.jpg",
     "index.html": "/eCommerce-Shop-UI/index.html",
-    "main.0bf43292.css.map": "/eCommerce-Shop-UI/static/css/main.0bf43292.css.map",
-    "main.0ddb8e2f.js.map": "/eCommerce-Shop-UI/static/js/main.0ddb8e2f.js.map"
+    "main.eb8bd1fb.css.map": "/eCommerce-Shop-UI/static/css/main.eb8bd1fb.css.map",
+    "main.d4f8d88d.js.map": "/eCommerce-Shop-UI/static/js/main.d4f8d88d.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bf43292.css",
-    "static/js/main.0ddb8e2f.js"
+    "static/css/main.eb8bd1fb.css",
+    "static/js/main.d4f8d88d.js"
   ]
 }
