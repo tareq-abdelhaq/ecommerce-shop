@@ -1,7 +1,7 @@
 {
   "name": "react-shop",
   "version": "0.1.0",
-  "homepage": "https://tarek-elhak.github.io/ecommerce-shop",
+  "homepage": "https://tareq-abdelhaq.github.io/ecommerce-shop",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",
