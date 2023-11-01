@@ -5,7 +5,7 @@ const data = [
     name: "Apple Watch Series 5",
     price: 339.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/apple-watch-series-5.jpg",
+    img: "/assets/images/apple-watch-series-5.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -18,7 +18,7 @@ const data = [
     name: "Apple iPhone 11 (64GB, Black)",
     price: 669.99,
     rating: 5,
-    img: "/ecommerce-shop/assets/images/apple-iphone-11.jpg",
+    img: "/assets/images/apple-iphone-11.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -31,7 +31,7 @@ const data = [
     name: "Apple iMac 27-inch",
     price: 999.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/apple-imac-27-inch.jpg",
+    img: "/assets/images/apple-imac-27-inch.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -44,7 +44,7 @@ const data = [
     name: "OneOdio A71 Wired Headphones",
     price: 49.99,
     rating: 3,
-    img: "/ecommerce-shop/assets/images/oneodio-a71-wired-headphones.jpg",
+    img: "/assets/images/oneodio-a71-wired-headphones.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -57,7 +57,7 @@ const data = [
     name: "Apple - MacBook Air® (Latest Model) - 13.3 Display - Silver",
     price: 999.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/apple-macbook-air-13.3-display-silver.jpg",
+    img: "/assets/images/apple-macbook-air-13.3-display-silver.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -70,7 +70,7 @@ const data = [
     name: "Switch Pro Controller",
     price: 429.99,
     rating: 3,
-    img: "/ecommerce-shop/assets/images/switch-pro-controller.jpg",
+    img: "/assets/images/switch-pro-controller.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -83,7 +83,7 @@ const data = [
     name: "Google - Google Home - White/Slate fabric",
     price: 129.29,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/google-home-white-slate-fabric.jpg",
+    img: "/assets/images/google-home-white-slate-fabric.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "google",
@@ -96,7 +96,7 @@ const data = [
     name: "Sony 4K Ultra HD LED TV",
     price: 7999.99,
     rating: 5,
-    img: "/ecommerce-shop/assets/images/sony-4K-ultra-hd-led-tv.jpg",
+    img: "/assets/images/sony-4K-ultra-hd-led-tv.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -109,7 +109,7 @@ const data = [
     name: "OnePlus 7 Pro",
     price: 14.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/oneplus-7-pro.jpg",
+    img: "/assets/images/oneplus-7-pro.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Philips",
@@ -122,7 +122,7 @@ const data = [
     name: "Logitech K380 Wireless Keyboard",
     price: 81.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/logitech-k380-wireless-keyboard.jpg",
+    img: "/assets/images/logitech-k380-wireless-keyboard.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby. Apple Watch Series 5 is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Logitech",
@@ -135,7 +135,7 @@ const data = [
     name: "Nike Air Max",
     price: 81.99,
     rating: 5,
-    img: "/ecommerce-shop/assets/images/nike-air-max.jpg",
+    img: "/assets/images/nike-air-max.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Nike",
@@ -148,7 +148,7 @@ const data = [
     name: "New Apple iPad Pro",
     price: 799.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/new-apple-ipad-pro.jpg",
+    img: "/assets/images/new-apple-ipad-pro.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "apple",
@@ -161,7 +161,7 @@ const data = [
     name: "Vankyo leisure 3 mini projector",
     price: 99.99,
     rating: 2,
-    img: "/ecommerce-shop/assets/images/vankyo-leisure-3-mini-projector.jpg",
+    img: "/assets/images/vankyo-leisure-3-mini-projector.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Vankyo Store",
@@ -174,7 +174,7 @@ const data = [
     name: "Wireless Charger 5W Max",
     price: 10.83,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/wireless-charger-5w-max.jpg",
+    img: "/assets/images/wireless-charger-5w-max.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "3M",
@@ -187,7 +187,7 @@ const data = [
     name: "Laptop Bag",
     price: 29.99,
     rating: 5,
-    img: "/ecommerce-shop/assets/images/laptop-bag.jpg",
+    img: "/assets/images/laptop-bag.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "TAS",
@@ -200,7 +200,7 @@ const data = [
     category: "Health, Fitness & Beauty",
     price: 54.59,
     rating: 5,
-    img: "/ecommerce-shop/assets/images/adidas-mens-tech-response-shoes.jpg",
+    img: "/assets/images/adidas-mens-tech-response-shoes.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Adidas",
@@ -213,7 +213,7 @@ const data = [
     name: "Oculus Quest All-in-one VR",
     price: 645,
     rating: 1,
-    img: "/ecommerce-shop/assets/images/oculus-quest-all-in-one-vr.jpg",
+    img: "/assets/images/oculus-quest-all-in-one-vr.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Oculus",
@@ -226,7 +226,7 @@ const data = [
     name: "Handbags for Women Large Designer bag",
     price: 39.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/handbags-for-women-large-designer-bag.jpg",
+    img: "/assets/images/handbags-for-women-large-designer-bag.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Hobo",
@@ -239,7 +239,7 @@ const data = [
     name: "Giotto 32oz Leakproof BPA Free Drinking Water",
     price: 16.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/giotto-32oz-leakproof-bpa-free-drinking-water.jpg",
+    img: "/assets/images/giotto-32oz-leakproof-bpa-free-drinking-water.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "3M",
@@ -252,7 +252,7 @@ const data = [
     name: "PlayStation 4 Console",
     price: 339.95,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/playstation-4.jpg",
+    img: "/assets/images/playstation-4.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Sony",
@@ -265,7 +265,7 @@ const data = [
     name: "Bugani M90 Portable Bluetooth Speaker",
     price: 56,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/bugani-m90-portable-bluetooth-speaker.jpg",
+    img: "/assets/images/bugani-m90-portable-bluetooth-speaker.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Bugani",
@@ -278,7 +278,7 @@ const data = [
     name: "Toshiba Canvio Advance 2TB Portable External Hard Drive",
     price: 69.99,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/toshiba-canvio.jpg",
+    img: "/assets/images/toshiba-canvio.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Toshiba",
@@ -291,7 +291,7 @@ const data = [
     name: "Tile Pro - High Performance Bluetooth Tracker",
     price: 29.99,
     rating: 3,
-    img: "/ecommerce-shop/assets/images/tile-pro-high-performance-bluetooth-tracker.jpg",
+    img: "/assets/images/tile-pro-high-performance-bluetooth-tracker.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Tile",
@@ -304,7 +304,7 @@ const data = [
     name: "Ronyes Unisex College Bag Bookbags for Women",
     price: 23.99,
     rating: 2,
-    img: "/ecommerce-shop/assets/images/ronyes-unisex-college-bag.jpg",
+    img: "/assets/images/ronyes-unisex-college-bag.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Ronyes",
@@ -317,7 +317,7 @@ const data = [
     name: "Willful Smart Watch for Men Women 2020,",
     price: 29.99,
     rating: 5,
-    img: "/ecommerce-shop/assets/images/willful-smart-watch.jpg",
+    img: "/assets/images/willful-smart-watch.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Willful",
@@ -330,7 +330,7 @@ const data = [
     name: "VicTsing Wireless Mouse",
     price: 10.99,
     rating: 3,
-    img: "/ecommerce-shop/assets/images/victsing-wireless-mouse.jpg",
+    img: "/assets/images/victsing-wireless-mouse.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "VicTsing",
@@ -343,7 +343,7 @@ const data = [
     name: "Bose Frames Tenor - Rectangular Polarized, Bluetooth Audio Sunglasses",
     price: 249,
     rating: 4,
-    img: "/ecommerce-shop/assets/images/bose-frames-tenor.jpg",
+    img: "/assets/images/bose-frames-tenor.jpg",
     discription:
       "On Retina display that never sleeps, so it’s easy to see the time and other important information, without raising or tapping the display. New location features, from a built-in compass to current elevation, help users better navigate their day, while international emergency calling1 allows customers to call emergency services directly from Apple Watch in over 150 countries, even without iPhone nearby.  is available in a wider range of materials, including aluminium, stainless steel, ceramic and an all-new titanium.",
     brand: "Bose",
